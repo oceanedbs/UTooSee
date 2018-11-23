@@ -1,0 +1,15 @@
+Executable : /home/oceane/Android/Sdk/cmake/3.6.4111459/bin/cmake
+arguments : 
+-H/home/oceane/Documents/Hackathon_Volvo/UTooSee/app
+-B/home/oceane/Documents/Hackathon_Volvo/UTooSee/app/.externalNativeBuild/cmake/debug/x86_64
+-DANDROID_ABI=x86_64
+-DANDROID_PLATFORM=android-16
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/oceane/Documents/Hackathon_Volvo/UTooSee/app/build/intermediates/cmake/debug/obj/x86_64
+-DCMAKE_BUILD_TYPE=Debug
+-DANDROID_NDK=/home/oceane/Android/Sdk/ndk-bundle
+-DCMAKE_CXX_FLAGS=-fexceptions
+-DCMAKE_TOOLCHAIN_FILE=/home/oceane/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/home/oceane/Android/Sdk/cmake/3.6.4111459/bin/ninja
+-GAndroid Gradle - Ninja
+jvmArgs : 
+

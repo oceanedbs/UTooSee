@@ -1,0 +1,3 @@
+/home/oceane/Documents/Hackathon_Volvo/UTooSee/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/home/oceane/Documents/Hackathon_Volvo/UTooSee/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/oceane/Documents/Hackathon_Volvo/UTooSee/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/native-lib.dir
