@@ -11,14 +11,6 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <TextView
-            android:id="@+id/appName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:text="UTooSee"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -42,13 +34,16 @@
 
     <Button
         android:id="@+id/vehicule1"
-        android:layout_width="wrap_content"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="Excavator"
+        android:layout_marginTop="100dp"
+        android:fontFamily="serif-monospace"
+        android:text=" Excavator 1"
         android:textSize="35dp"
         app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="left|center" />
+        app:layout_anchorGravity="left|top" />
 
 
 
