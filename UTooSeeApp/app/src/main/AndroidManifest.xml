@@ -65,7 +65,8 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
             android:name=".OpenCvActivity"
             android:label="@string/title_activity_open_cv"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
