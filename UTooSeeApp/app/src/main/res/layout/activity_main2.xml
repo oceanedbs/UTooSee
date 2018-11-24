@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextColor="#F4D03F"/>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -35,16 +36,26 @@
     <Button
         android:id="@+id/vehicule1"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="337dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="100dp"
+        android:layout_marginRight="10dp"
         android:fontFamily="serif-monospace"
         android:text=" Excavator 1"
-        android:textSize="35dp"
+        android:textSize="30sp"
+        android:backgroundTint="#FEF9E7"
         app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="left|top" />
+        app:layout_anchorGravity="top|right" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="100dp"
+        app:layout_anchorGravity="top|left"
+        app:srcCompat="@drawable/excavator"
+        tools:layout_width="55dp" />
 
 
 </android.support.design.widget.CoordinatorLayout>
