@@ -28,16 +28,19 @@
     <Button
         android:id="@+id/mesure"
         android:layout_width="200dp"
-        tools:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:autoText="false"
+        android:clickable="false"
         android:text="Mesure"
+        android:textColor="#808080"
         app:layout_anchor="@+id/include2"
         app:layout_anchorGravity="top|left"
+        tools:layout_width="wrap_content"
         tools:width="200dp" />
 
     <Button
-        android:id="@+id/Sumary"
+        android:id="@+id/summary"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"

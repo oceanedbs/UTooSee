@@ -4,4 +4,6 @@
     <string name="title_activity_main2">UTooSee</string>
     <string name="title_activity_nserie">Add A New Vehicule</string>
     <string name="title_activity_presentation_component">Component of your Excavator</string>
+    <string name="title_activity_summary">Summary</string>
+    <string name="title_activity_measuring">Measuring</string>
 </resources>

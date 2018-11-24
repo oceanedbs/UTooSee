@@ -30,6 +30,14 @@
         <activity
             android:name=".presentationComponent"
             android:label="@string/title_activity_presentation_component"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Summary"
+            android:label="@string/title_activity_summary"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Measuring"
+            android:label="@string/title_activity_measuring"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
