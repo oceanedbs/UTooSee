@@ -6,6 +6,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.content.Intent;
+import android.widget.Button;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -16,12 +18,23 @@ public class Main2Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton addVehicule = (FloatingActionButton) findViewById(R.id.addVehicule);
+        addVehicule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(Main2Activity.this, NSerie.class);
+                startActivity(intent);
+
+
+            }
+        });
+        Button vehicule1 = (Button) findViewById(R.id.vehicule1);
+        vehicule1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View view){
+                Intent intent = new Intent (Main2Activity.this, presentationComponent.class);
+                startActivity(intent);
+
             }
         });
     }
