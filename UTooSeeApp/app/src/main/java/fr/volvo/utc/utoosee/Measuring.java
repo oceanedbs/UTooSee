@@ -7,7 +7,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.Button;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,14 +16,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
-
-=======
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
->>>>>>> master
 
-public class Measuring extends AppCompatActivity implements View.OnClickListener {
+public class Measuring extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +29,9 @@ public class Measuring extends AppCompatActivity implements View.OnClickListener
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         GridView gridview = (GridView) findViewById(R.id.Measures);
-        gridview.setAdapter(new Button(this));
+        //gridview.setAdapter(new Button(this));
 
-<<<<<<< HEAD
-=======
-    }
+/*
 
     public class ButtonAdapter extends BaseAdapter {
         private  mContext;
@@ -90,17 +84,20 @@ public class Measuring extends AppCompatActivity implements View.OnClickListener
             return btn;
         }
     }
->>>>>>> master
+*/
 
 
     Button camera = (Button) findViewById(R.id.camera);
-    camera.setOnClickListener(new View.OnClickListener(){
+    camera.setOnClickListener(new View.OnClickListener()
+
+    {
         @Override
         public void onClick (View view){
-            Intent intent = new Intent (Measuring.this, MakePhotoActivity.class);
-            startActivity(intent);
+        Intent intent = new Intent(Measuring.this, Summary.class);
+        startActivity(intent);
 
-        }
+    }
     });
 }
 }
+
