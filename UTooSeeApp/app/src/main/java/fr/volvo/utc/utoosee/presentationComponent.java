@@ -39,7 +39,7 @@ public class presentationComponent extends AppCompatActivity {
         BottomRoller.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
-                Intent intent = new Intent (presentationComponent.this, Measuring.class);
+                Intent intent = new Intent (presentationComponent.this, MakePhotoActivity.class);
                 startActivity(intent);
 
             }
