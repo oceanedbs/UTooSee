@@ -51,26 +51,29 @@
         android:id="@+id/BottomRoller"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
         android:text="Bottom Roller"
         android:textAllCaps="false"
-        android:textSize="20sp"
         app:layout_anchor="@+id/include2"
-        app:layout_anchorGravity="left|center"
+        app:layout_anchorGravity="top|center"
         tools:layout_marginLeft="2dp"
-        tools:layout_marginTop="50dp"
-        tools:width="200dp" />
+        tools:layout_marginTop="150dp"
+        tools:width="200dp"
+        android:textSize="25dp"/>
 
     <Button
         android:id="@+id/TripleGrouserShoe"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="2dp"
+        android:layout_marginTop="350dp"
+        android:paddingBottom="20dp"
         android:text="Triple Groser Shoe"
         android:textAllCaps="false"
         app:layout_anchor="@+id/include2"
-        app:layout_anchorGravity="right|center"
-        tools:layout_marginTop="350dp"
-        tools:textSize="20sp"
-        tools:width="400dp" />
+        app:layout_anchorGravity="left|top"
+        tools:layout_marginTop="200dp"
+        tools:width="400dp"
+        android:textSize="25dp"/>
 
 </android.support.design.widget.CoordinatorLayout>
