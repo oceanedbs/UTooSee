@@ -22,12 +22,26 @@
 
     <include layout="@layout/content_measuring" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+    <TextView
+        android:id="@+id/pièce"
+        android:layout_width="328dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="32dp"
+        android:text="Pieces :"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridView
+        android:id="@+id/Measures"
+        android:layout_width="fill_parent"
+        android:layout_height="487dp"
+        android:footerDividersEnabled="false"
+        android:numColumns="2"
+        android:verticalSpacing="1dp"
+        tools:layout_marginTop="80dp" />
 
 </android.support.design.widget.CoordinatorLayout>
