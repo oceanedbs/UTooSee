@@ -6,4 +6,5 @@
     <string name="title_activity_presentation_component">Component of your Excavator</string>
     <string name="title_activity_summary">Summary</string>
     <string name="title_activity_measuring">Measuring</string>
+    <string name="title_activity_make_photo">Taking a Photo</string>
 </resources>

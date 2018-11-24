@@ -28,6 +28,28 @@ public class presentationComponent extends AppCompatActivity {
             }
         });
 
+        Button BottomRoller = (Button) findViewById(R.id.BottomRoller);
+        BottomRoller.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View view){
+                Intent intent = new Intent (presentationComponent.this, Measuring.class);
+                startActivity(intent);
+
+            }
+        });
+
+        Button tripleGrouserShoe = (Button) findViewById(R.id.tripleGrouserShoe);
+       /* tripleGrouserShoe.setOnClickListener(new View.OnClickListener(){
+            @Override
+
+          public void onClick (View view){
+                Intent intent = new Intent (presentationComponent.this, Measuring.class);
+                startActivity(intent);
+
+            }
+        });*/
+
+
     }
 
 }

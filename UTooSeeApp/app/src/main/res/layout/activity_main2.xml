@@ -50,4 +50,7 @@
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="left|center" />
 
+
+
 </android.support.design.widget.CoordinatorLayout>
+

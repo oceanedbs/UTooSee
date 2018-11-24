@@ -26,10 +26,10 @@
         layout="@layout/content_summary" />
 
     <Button
-        android:id="@+id/mesure"
-        android:layout_width="wrap_content"
+        android:id="@+id/measure"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_width="200dp"
+        android:layout_marginTop="50dp"
         android:text="Measure"
         app:layout_anchor="@+id/include3"
         app:layout_anchorGravity="left|top"
@@ -38,14 +38,14 @@
 
     <Button
         android:id="@+id/summary"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:text="Summary"
-        app:layout_anchor="@+id/include3"
-        app:layout_anchorGravity="right|top"
         android:textColor="#808080"
+        app:layout_anchor="@+id/include3"
 
+        app:layout_anchorGravity="right|top"
         tools:width="200dp" />
 
     <TextView
@@ -72,11 +72,53 @@
         app:layout_anchorGravity="left|center" />
 
     <ProgressBar
+        android:id="@+id/progressBar4"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="20dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="50"
+        app:layout_anchor="@+id/include3"
+        app:layout_anchorGravity="top|center"
+        tools:layout_marginTop="200dp" />
+
+    <TextView
+        android:id="@+id/timeleftTGS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="0dp"
+        android:text="TIme left befire changing this component : 4 months"
+        app:layout_anchor="@+id/include3"
+        app:layout_anchorGravity="top|center" />
+
+    <ProgressBar
+        android:id="@+id/progressBar5"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="200dp"
+        android:max="100"
+        android:progress="80"
         app:layout_anchor="@+id/include3"
-        app:layout_anchorGravity="top|center" />
+        app:layout_anchorGravity="bottom|center" />
+
+    <TextView
+        android:id="@+id/timeleftBR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="150dp"
+        android:text="Time Left before changing this component : 1 month"
+        app:layout_anchor="@+id/include3"
+        app:layout_anchorGravity="bottom|center" />
 
 </android.support.design.widget.CoordinatorLayout>
