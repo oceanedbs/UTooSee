@@ -53,8 +53,10 @@
         android:layout_height="60dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="100dp"
+        android:layout_marginRight="250dp"
+        android:layout_marginBottom="700dp"
         app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="left|top"
+        app:layout_anchorGravity="left|center"
         app:srcCompat="@drawable/excavator"
         tools:layout_marginLeft="25dp"
         tools:layout_width="55dp" />

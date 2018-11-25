@@ -1,6 +1,7 @@
 package fr.volvo.utc.utoosee;
 
 import android.content.Intent;
+import android.net.sip.SipSession;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
@@ -25,13 +26,6 @@ public class presentationComponent extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
-
-
-
-
-
         Button summary = (Button) findViewById(R.id.summary);
         summary.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -42,24 +36,10 @@ public class presentationComponent extends AppCompatActivity {
             }
         });
 
-        Button BottomRoller = (Button) findViewById(R.id.BottomRoller);
+      /*  Button BottomRoller = (Button) findViewById(R.id.BottomRoller);
         BottomRoller.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
-                    Intent intent = new Intent (presentationComponent.this, Measuring.class);
-                    startActivity(intent);
-                }
-
-
-
-        });
-
-
-
-        Button tripleGrouserShoe = (Button) findViewById(R.id.tripleGrouserShoe);
-        /*tripleGrouserShoe.setOnClickListener(new View.OnClickListener(){
-            @Override
-          public void onClick (View view){
                 Intent intent = new Intent (presentationComponent.this, Measuring.class);
                 startActivity(intent);
 
@@ -67,6 +47,20 @@ public class presentationComponent extends AppCompatActivity {
         });*/
 
 
+        Button tripleGrouserShoe = (Button) findViewById(R.id.TripleGrouserShoe);
+        tripleGrouserShoe.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View view){
+                Intent intent = new Intent (presentationComponent.this, Measuring.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
     }
+
+
 
 }
