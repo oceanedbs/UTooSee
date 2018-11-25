@@ -31,19 +31,39 @@ public class Measuring extends AppCompatActivity  {
         GridView gridview = (GridView) findViewById(R.id.Measures);
         //gridview.setAdapter(new Button(this));
 
+        ComponentsDB componentsDB=new ComponentsDB(this);
+        componentsDB.open();
+
+        Components components = new Components(1,"Left Bottom Roller 1", "2018/12/25", 1);
+        componentsDB.insertPiece(components);
+
+        //Components componentsFromDB=componentsDB.getComponantsWithNum(1);
 
 
-    Button camera = (Button) findViewById(R.id.camera);
+
+        Button camera = (Button) findViewById(R.id.camera);
     camera.setOnClickListener(new View.OnClickListener()
 
     {
         @Override
         public void onClick (View view){
-        Intent intent = new Intent(Measuring.this, Summary.class);
+            Intent intent = new Intent (Measuring.this, MakePhotoActivity.class);
         startActivity(intent);
 
     }
     });
+
+        Button end = (Button) findViewById(R.id.end);
+        end.setOnClickListener(new View.OnClickListener()
+
+        {
+            @Override
+            public void onClick (View view){
+                Intent intent = new Intent (Measuring.this, Summary.class);
+                startActivity(intent);
+
+            }
+        });
 }
 }
 

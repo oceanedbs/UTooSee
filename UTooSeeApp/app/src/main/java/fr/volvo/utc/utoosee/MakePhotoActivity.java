@@ -77,7 +77,7 @@ public class MakePhotoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 takePicture();
-                Intent intent = new Intent (MakePhotoActivity.this, presentationComponent.class);
+                Intent intent = new Intent (MakePhotoActivity.this, Measuring.class);
                 startActivity(intent);
 
             }

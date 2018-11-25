@@ -25,6 +25,13 @@ public class presentationComponent extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
+
+
+
+
+
         Button summary = (Button) findViewById(R.id.summary);
         summary.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -39,16 +46,11 @@ public class presentationComponent extends AppCompatActivity {
         BottomRoller.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
-                Intent intent = new Intent (presentationComponent.this, MakePhotoActivity.class);
+                Intent intent = new Intent (presentationComponent.this, Measuring.class);
                 startActivity(intent);
 
             }
         });
-
-
-
-
-
 
 
 

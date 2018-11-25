@@ -24,14 +24,13 @@ public class NSerie extends AppCompatActivity {
 
         Excavator excavator = new Excavator(1234, "excavator 1");
 
-      /*
+
       excavatorDB.open();
 
 
       excavatorDB.instertExcavator(excavator);
-        */ /*
 
-        Excavator excavatorFromDB = excavatorDB.getExcavatorWithNum(1234);
+     /* Excavator excavatorFromDB = excavatorDB.getExcavatorWithNum(1234);
 
 
 
@@ -39,6 +38,7 @@ public class NSerie extends AppCompatActivity {
             nSerieEdit.setText("Yeahhhh");
         }
 */
+
 
 
         Button submit = (Button) findViewById(R.id.submit);

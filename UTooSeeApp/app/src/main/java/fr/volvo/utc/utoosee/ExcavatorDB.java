@@ -9,8 +9,8 @@ public class ExcavatorDB {
     private static final int VERSION_BDD = 1;
     private static final String NAME_BDD = "excavator.db";
 
-    private static final String TABLE_EXCAVATOR = "table_livres";
-    private static final String COL_ID = "SerieNum";
+    private static final String TABLE_EXCAVATOR = "Excavator";
+    private static final String COL_NUM = "SerieNumber";
     private static final int NUM_COL_NUM = 0;
     private static final String COL_NAME = "Name";
     private static final int NUM_COL_NAME = 1;
@@ -37,8 +37,8 @@ public class ExcavatorDB {
 
     public long instertExcavator(Excavator excavator){
         ContentValues values=new ContentValues();
-        values.put(COL_ID, excavator.getNumber());
-        values.put(COL_NAME, excavator.getNumber());
+        values.put(COL_NUM, excavator.getNumber());
+        values.put(COL_NAME, excavator.getName());
         return bdd.insert(TABLE_EXCAVATOR, null, values);
     }
 
@@ -58,7 +58,9 @@ public class ExcavatorDB {
 
 
     public Excavator getExcavatorWithNum(int num){
-        Cursor c=bdd.rawQuery("SELECT Name FROM Excavator WHERE Num=? ", new String[] {num + ""});
+        String Snum=""+num;
+
+        Cursor c=bdd.rawQuery("SELECT Name FROM Excavator  WHERE _SerieNumber =? ", new String[] {Snum});
         return cursorToExcavator(c);
     }
 

@@ -35,7 +35,7 @@ public class DBHandler extends SQLiteOpenHelper {
     @Override
 
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_EXCAVATOR_TABLE="CREATE TABLE"+TABLE_NAME+"("+COLUMN_ID+"INTEGER PRIMARY KEY,"+COLUMN_NAME+"TEXT"+")";
+        String CREATE_EXCAVATOR_TABLE="CREATE TABLE "+TABLE_NAME+"("+COLUMN_ID+"INTEGER PRIMARY KEY,"+COLUMN_NAME+"TEXT"+")";
         db.execSQL(CREATE_EXCAVATOR_TABLE);
     }
 
