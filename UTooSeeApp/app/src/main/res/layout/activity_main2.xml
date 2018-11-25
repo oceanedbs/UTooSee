@@ -11,20 +11,13 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <TextView
-            android:id="@+id/appName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:text="UTooSee"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextColor="#F4D03F"/>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -42,14 +35,29 @@
 
     <Button
         android:id="@+id/vehicule1"
-        android:layout_width="wrap_content"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="Excavator"
-        android:textSize="35dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="serif-monospace"
+        android:text=" Excavator 1"
+        android:textSize="30sp"
+        android:backgroundTint="#FEF9E7"
         app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="left|center" />
+        app:layout_anchorGravity="top|right" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="100dp"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="left|top"
+        app:srcCompat="@drawable/excavator"
+        tools:layout_marginLeft="25dp"
+        tools:layout_width="55dp" />
 
 
 </android.support.design.widget.CoordinatorLayout>

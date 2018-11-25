@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextColor="#F4D03F"/>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -34,6 +35,7 @@
         android:clickable="false"
         android:text="Mesure"
         android:textColor="#808080"
+        android:backgroundTint="#FEF9E7"
         app:layout_anchor="@+id/include2"
         app:layout_anchorGravity="top|left"
         tools:layout_width="wrap_content"
@@ -47,6 +49,7 @@
         android:text="Summary"
         app:layout_anchor="@+id/include2"
         app:layout_anchorGravity="right|top"
+        android:backgroundTint="#F7DC6F"
         tools:layout_width="wrap_content"
         tools:width="200dp" />
 
@@ -55,10 +58,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
+        android:layout_marginRight="15dp"
         android:width="250dp"
         android:text="Bottom Roller"
         android:textAllCaps="false"
         android:textSize="25dp"
+        android:backgroundTint="#FEF9E7"
         app:layout_anchor="@+id/include2"
         app:layout_anchorGravity="right"
         tools:layout_marginTop="150dp" />
@@ -69,13 +74,39 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="210dp"
+        android:layout_marginRight="15dp"
         android:paddingBottom="20dp"
         android:text="Triple Groser Shoe"
         android:textAllCaps="false"
+        android:textSize="25dp"
+        android:backgroundTint="#FEF9E7"
         app:layout_anchor="@+id/include2"
         app:layout_anchorGravity="right|top"
         tools:layout_marginTop="210dp"
-        tools:width="400dp"
-        android:textSize="25dp"/>
+        tools:width="400dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:visibility="visible"
+        app:layout_anchorGravity="top|left"
+        app:srcCompat="@drawable/tgs"
+        tools:layout_marginLeft="25dp"
+        tools:layout_marginTop="150dp"
+        tools:layout_width="55dp"
+        tools:srcCompat="@drawable/bottom_roller" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="230dp"
+        android:visibility="visible"
+        app:layout_anchorGravity="top|left"
+        app:srcCompat="@drawable/tgs"
+        tools:layout_marginLeft="25dp"
+        tools:layout_width="55dp"
+        tools:srcCompat="@drawable/tgs" />
 
 </android.support.design.widget.CoordinatorLayout>

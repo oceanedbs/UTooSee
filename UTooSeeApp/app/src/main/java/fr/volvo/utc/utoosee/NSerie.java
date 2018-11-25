@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class NSerie extends AppCompatActivity {
 
@@ -18,13 +19,25 @@ public class NSerie extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final EditText nSerieEdit=(EditText)findViewById(R.id.nSerieEdit);
+
+
 
         Button submit = (Button) findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
-                Intent intent = new Intent (NSerie.this, presentationComponent.class);
-                startActivity(intent);
+                final String Num=nSerieEdit.getText().toString();
+
+                if(Num.length()==0){
+                    nSerieEdit.requestFocus();
+                    nSerieEdit.setError("FIELD CANNOT BE EMPTY");
+                }
+                else{
+                    Intent intent = new Intent (NSerie.this, presentationComponent.class);
+                    startActivity(intent);
+                }
+
 
             }
         });

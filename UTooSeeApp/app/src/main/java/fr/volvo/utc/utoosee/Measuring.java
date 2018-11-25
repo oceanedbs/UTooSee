@@ -1,6 +1,7 @@
 package fr.volvo.utc.utoosee;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,19 +9,123 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.app.ListActivity;
+
+import android.app.ProgressDialog;
+
+import android.content.Context;
+
+import android.os.AsyncTask;
+
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.content.Intent;
-import android.widget.Button;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.GridView;
+
+import android.app.Activity;
+
+import android.util.Log;
+
+import android.view.Menu;
+
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+
+import android.widget.ListView;
+
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+
+
+import org.json.JSONArray;
+
+import org.json.JSONException;
+
+import org.json.JSONObject;
+
+
+import java.io.InputStream;
+import java.util.ArrayList;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
 
 public class Measuring extends AppCompatActivity  {
+
+    private int clic[]=new int[100];
+
+
+
+
+
+    private void parseJson(String s) {
+        TextView txtDisplay=findViewById(R.id.textDisplay);
+        Button button_piece=findViewById(R.id.button_piece);
+        LinearLayout ll=(LinearLayout)findViewById(R.id.button_layout);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+
+        StringBuilder builder=new StringBuilder();
+
+        try {
+            JSONObject root= new JSONObject(s);
+            JSONObject piece=root.getJSONObject("pieces");
+            builder.append("Name : ")
+                    .append(piece.getString("name")).append("\n");
+            builder.append("Number : ")
+                    .append(piece.getString("number of pieces")).append("\n").append("\n").append("\n");
+            JSONArray  number =piece.getJSONArray("name of the pieces");
+
+
+            for(int i=0; i<number.length(); i++) {
+                StringBuilder builder2=new StringBuilder();
+
+                Button btn=new Button(this);
+
+                JSONObject namepiece = number.getJSONObject(i);
+                builder2.append(namepiece.getString("name"))
+                        .append("\n");
+                btn.setId(i);
+                btn.setText(builder2.toString());
+                if(clic[i]==1){
+                    btn.setTextColor(R.color.colorAccent);
+                }
+                btn.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick (View view){
+                       // clic[i]=1;
+                        Intent intent = new Intent (Measuring.this, MakePhotoActivity.class);
+                        startActivity(intent);
+
+                    }
+                });
+                ll.addView(btn);
+
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        txtDisplay.setText(builder.toString());
+    }
+
+
+    public void loadPieces(){
+        Resources res=getResources();
+        InputStream is=res.openRawResource(R.raw.data_base);
+        Scanner scanner=new Scanner(is);
+
+        StringBuilder builder = new StringBuilder();
+
+        while(scanner.hasNextLine()){
+            builder.append(scanner.nextLine());
+
+        }
+        parseJson(builder.toString());
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,76 +133,35 @@ public class Measuring extends AppCompatActivity  {
         setContentView(R.layout.activity_measuring);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        GridView gridview = (GridView) findViewById(R.id.Measures);
-        //gridview.setAdapter(new Button(this));
+        for(int i=0; i<100; i++)
+            clic[i]=0;
 
-/*
+        loadPieces();
 
-    public class ButtonAdapter extends BaseAdapter {
-        private  mContext;
-
-        // Gets the context so it can be used later
-        public ButtonAdapter(c) {
-            mContext = c;
-        }
-    public String[] filesnames = {
-            "1st Left Measure",
-            "1st Right Measure",
-            "Roflcopters"
-    };
-        // Total number of things contained within the adapter
-        public int getCount() {
-            return filesnames.length;
-        }
-
-        // Require for structure, not really used in my code.
-        public Object getItem(int position) {
-            return null;
-        }
-
-        // Require for structure, not really used in my code. Can
-        // be used to get the id of an item in the adapter for
-        // manual control.
-        public long getItemId(int position) {
-            return position;
-        }
-
-        public View getView(int position,
-                            View convertView, ViewGroup parent) {
-            Button btn;
-            if (convertView == null) {
-                // if it's not recycled, initialize some attributes
-                btn = new Button(mContext);
-                btn.setLayoutParams(new GridView.LayoutParams(100, 55));
-                btn.setPadding(8, 8, 8, 8);
-            }
-            else {
-                btn = (Button) convertView;
-            }
-            exus
-            btn.setText(filesnames[position]);
-            // filenames is an array of strings
-            btn.setTextColor(Color.WHITE);
-            btn.setBackgroundResource(R.drawable.button);
-            btn.setId(position);
-
-            return btn;
-        }
-    }
-*/
-
-
-    Button camera = (Button) findViewById(R.id.camera);
-    camera.setOnClickListener(new View.OnClickListener()
+        Button camera = (Button) findViewById(R.id.button_piece);
+        camera.setOnClickListener(new View.OnClickListener()
 
     {
         @Override
         public void onClick (View view){
-        Intent intent = new Intent(Measuring.this, Summary.class);
+            Intent intent = new Intent (Measuring.this, MakePhotoActivity.class);
         startActivity(intent);
 
     }
     });
-}
-}
 
+        Button end = (Button) findViewById(R.id.end);
+        end.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view){
+                            Intent intent = new Intent(Measuring.this, Summary.class);
+                            startActivity(intent);
+                    }
+
+            });
+
+
+    }
+
+
+}
