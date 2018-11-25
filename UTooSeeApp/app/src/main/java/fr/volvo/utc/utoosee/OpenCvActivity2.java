@@ -1,55 +1,47 @@
 package fr.volvo.utc.utoosee;
 
-import java.util.ArrayList;
-import java.util.List;
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.SurfaceView;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.SeekBar;
 
 import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
+import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
-import org.opencv.core.MatOfByte;
-import org.opencv.core.MatOfInt;
 import org.opencv.core.MatOfPoint;
-import org.opencv.core.Point;
 import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 import org.opencv.core.Size;
-import org.opencv.android.CameraBridgeViewBase;
-import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
-import org.opencv.utils.Converters;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.View.OnTouchListener;
-import android.view.SurfaceView;
-import android.widget.Button;
-import android.widget.SeekBar;
+import java.util.List;
 
-public class OpenCvActivity extends Activity implements OnTouchListener, CvCameraViewListener2 {
+public class OpenCvActivity2 extends Activity implements OnTouchListener, CvCameraViewListener2 {
     private static final String  TAG              = "MainActivity";
 
     private boolean              mIsColorSelected = false;
     private Mat                  mRgba;
-    private Mat                  contourRgba;
     private Scalar               mBlobColorRgba;
     private Scalar               mBlobColorHsv;
     private ColorBlobDetector    mDetector;
     private Mat                  mSpectrum;
     private Size                 SPECTRUM_SIZE;
     private Scalar               CONTOUR_COLOR;
-    private boolean capturedPicture;
 
     private CameraBridgeViewBase mOpenCvCameraView;
 
@@ -61,7 +53,7 @@ public class OpenCvActivity extends Activity implements OnTouchListener, CvCamer
                 {
                     Log.i(TAG, "OpenCV loaded successfully");
                     mOpenCvCameraView.enableView();
-                    mOpenCvCameraView.setOnTouchListener(OpenCvActivity.this);
+                    mOpenCvCameraView.setOnTouchListener(OpenCvActivity2.this);
                 } break;
                 default:
                 {
@@ -71,7 +63,7 @@ public class OpenCvActivity extends Activity implements OnTouchListener, CvCamer
         }
     };
 
-    public OpenCvActivity() {
+    public OpenCvActivity2() {
         Log.i(TAG, "Instantiated new " + this.getClass());
     }
 
@@ -84,41 +76,18 @@ public class OpenCvActivity extends Activity implements OnTouchListener, CvCamer
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         setContentView(R.layout.activity_open_cv);
-        capturedPicture = false;
+
         mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.color_blob_detection_activity_surface_view);
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
-        final Button capture = (Button) findViewById(R.id.capture);
-        final Button returnButton = (Button) findViewById(R.id.returnButton);
-        final Button sendPicture = (Button) findViewById(R.id.sendPicture);
-        returnButton.setVisibility(View.INVISIBLE);
-        sendPicture.setVisibility(View.INVISIBLE);
-        capture.setVisibility(View.VISIBLE);
-        capture.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick (View view){
-                capturedPicture = true;
-                returnButton.setVisibility(View.VISIBLE);
-                sendPicture.setVisibility(View.VISIBLE);
-                capture.setVisibility(View.INVISIBLE);
-            }
-        });
-        returnButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick (View view){
-                capturedPicture = false;
-                returnButton.setVisibility(View.INVISIBLE);
-                sendPicture.setVisibility(View.INVISIBLE);
-                capture.setVisibility(View.VISIBLE);
-            }
-        });
+      /*  Button sendPicture = (Button) findViewById(R.id.sendPicture);
         sendPicture.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
-//close activity
+                myFunc();
             }
         });
-    /*    SeekBar simpleSeekBar = (SeekBar) findViewById(R.id.seekBarPrecision); // initiate the Seek bar
+        SeekBar simpleSeekBar = (SeekBar) findViewById(R.id.seekBarPrecision); // initiate the Seek bar
 
         int maxValue=simpleSeekBar.getMax(); // get maximum value of the Seek bar
         simpleSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -147,15 +116,14 @@ public class OpenCvActivity extends Activity implements OnTouchListener, CvCamer
 
     }
 
-    private void captureFunc() {
-       /* List<MatOfPoint> contours = mDetector.getContours();
+    private void myFunc() {
+        List<MatOfPoint> contours = mDetector.getContours();
         if(contours.size()==0)
         {
             return;
         }
-        Log.i(TAG, "Button");*/
-       capturedPicture = true;
-    /*    Mat image = mRgba.clone();
+        Log.i(TAG, "Button");
+        Mat image = mRgba.clone();
         for(int i=0; i< contours.size();i++){
             if (Imgproc.contourArea(contours.get(i)) > 50 ){
                 Rect rect = Imgproc.boundingRect(contours.get(i));
@@ -285,37 +253,13 @@ public class OpenCvActivity extends Activity implements OnTouchListener, CvCamer
     }
 
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
-        if(capturedPicture)
-        {
-            return contourRgba;
-        }
         mRgba = inputFrame.rgba();
 
-        Mat gray = new Mat();
-        Imgproc.cvtColor(mRgba, gray, Imgproc.COLOR_BGR2GRAY);
-
-
-        int kernel_size = 11;
-        Size s = new Size(kernel_size, kernel_size);
-        Mat blur_gray = new Mat();
-        Imgproc.GaussianBlur(gray, blur_gray, s, 0);
-        Mat kernel = new Mat(5, 5, CvType.CV_8S, Scalar.all(1));
-        Point anchor = new Point(-1, -1);
-        Imgproc.erode(blur_gray, blur_gray, kernel, anchor, 2);
-        Imgproc.dilate(blur_gray, blur_gray, kernel, anchor, 1);
-
-        Mat image = blur_gray.clone();
-
-        int low_threshold = 50;
-        int high_threshold = 150;
-        Mat edges = new Mat();
-        Imgproc.Canny(image,edges, low_threshold, high_threshold);
-
-     /*   if (mIsColorSelected) {
+        if (mIsColorSelected) {
             mDetector.process(mRgba);
             List<MatOfPoint> contours = mDetector.getContours();
             Log.e(TAG, "Contours count: " + contours.size());
-      //      Imgproc.drawContours(mRgba, contours, -1, CONTOUR_COLOR);
+            Imgproc.drawContours(mRgba, contours, -1, CONTOUR_COLOR);
 
             Mat colorLabel = mRgba.submat(4, 68, 4, 68);
             colorLabel.setTo(mBlobColorRgba);
@@ -323,8 +267,8 @@ public class OpenCvActivity extends Activity implements OnTouchListener, CvCamer
             Mat spectrumLabel = mRgba.submat(4, 4 + mSpectrum.rows(), 70, 70 + mSpectrum.cols());
             mSpectrum.copyTo(spectrumLabel);
         }
-*/
-        return edges;
+
+        return mRgba;
     }
 
     private Scalar converScalarHsv2Rgba(Scalar hsvColor) {
