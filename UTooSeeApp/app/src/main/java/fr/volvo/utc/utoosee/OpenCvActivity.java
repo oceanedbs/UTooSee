@@ -91,15 +91,16 @@ public class OpenCvActivity extends Activity implements OnTouchListener, CvCamer
         final Button capture = (Button) findViewById(R.id.capture);
         final Button returnButton = (Button) findViewById(R.id.returnButton);
         final Button sendPicture = (Button) findViewById(R.id.sendPicture);
+        sendPicture.setEnabled(false);
+
         returnButton.setVisibility(View.INVISIBLE);
-        sendPicture.setVisibility(View.INVISIBLE);
         capture.setVisibility(View.VISIBLE);
         capture.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
                 capturedPicture = true;
                 returnButton.setVisibility(View.VISIBLE);
-                sendPicture.setVisibility(View.VISIBLE);
+sendPicture.setEnabled(true);
                 capture.setVisibility(View.INVISIBLE);
             }
         });
@@ -107,8 +108,8 @@ public class OpenCvActivity extends Activity implements OnTouchListener, CvCamer
             @Override
             public void onClick (View view){
                 capturedPicture = false;
+                sendPicture.setEnabled(false);
                 returnButton.setVisibility(View.INVISIBLE);
-                sendPicture.setVisibility(View.INVISIBLE);
                 capture.setVisibility(View.VISIBLE);
             }
         });
