@@ -58,7 +58,6 @@ public class Measuring extends AppCompatActivity  {
 
     private void parseJson(String s) {
         TextView txtDisplay=findViewById(R.id.textDisplay);
-        Button button_piece=findViewById(R.id.button_piece);
         LinearLayout ll=(LinearLayout)findViewById(R.id.button_layout);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
@@ -138,17 +137,6 @@ public class Measuring extends AppCompatActivity  {
 
         loadPieces();
 
-        Button camera = (Button) findViewById(R.id.button_piece);
-        camera.setOnClickListener(new View.OnClickListener()
-
-    {
-        @Override
-        public void onClick (View view){
-            Intent intent = new Intent (Measuring.this, OpenCvActivity.class);
-        startActivity(intent);
-
-    }
-    });
 
         Button end = (Button) findViewById(R.id.end);
         end.setOnClickListener(new View.OnClickListener() {
