@@ -19,12 +19,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="472dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/color_blob_detection_activity_surface_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintStart_toEndOf="@+id/color_blob_detection_activity_surface_view"
         app:layout_constraintTop_toBottomOf="@+id/color_blob_detection_activity_surface_view"
         app:layout_constraintVertical_bias="0.501" />
+
     <Button
         android:id="@+id/sendPicture"
         android:layout_width="wrap_content"
@@ -32,22 +34,26 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="472dp"
         android:text="Send Data"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/color_blob_detection_activity_surface_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintStart_toEndOf="@+id/color_blob_detection_activity_surface_view"
         app:layout_constraintTop_toBottomOf="@+id/color_blob_detection_activity_surface_view"
-        app:layout_constraintVertical_bias="0.501" />
+        app:layout_constraintVertical_bias="0.26999998" />
 
 
     <Button
         android:id="@+id/returnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="Return"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/color_blob_detection_activity_surface_view"
+        app:layout_constraintEnd_toStartOf="@+id/capture"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toEndOf="@+id/color_blob_detection_activity_surface_view"
+        app:layout_constraintTop_toBottomOf="@+id/color_blob_detection_activity_surface_view" />
 
     <!-- <SeekBar
          android:id="@+id/seekBarPrecision"
