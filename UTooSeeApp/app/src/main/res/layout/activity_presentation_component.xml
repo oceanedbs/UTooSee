@@ -75,38 +75,41 @@
         android:layout_marginLeft="2dp"
         android:layout_marginTop="210dp"
         android:layout_marginRight="15dp"
+        android:backgroundTint="#FEF9E7"
         android:paddingBottom="20dp"
         android:text="Triple Groser Shoe"
         android:textAllCaps="false"
         android:textSize="25dp"
-        android:backgroundTint="#FEF9E7"
         app:layout_anchor="@+id/include2"
         app:layout_anchorGravity="right|top"
         tools:layout_marginTop="210dp"
         tools:width="400dp" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:visibility="visible"
-        app:layout_anchorGravity="top|left"
-        app:srcCompat="@drawable/tgs"
-        tools:layout_marginLeft="25dp"
-        tools:layout_marginTop="150dp"
-        tools:layout_width="55dp"
-        tools:srcCompat="@drawable/bottom_roller" />
+        android:id="@+id/BottomRollerIm"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="300dp"
+        android:adjustViewBounds="false"
+        android:maxWidth="50dp"
+        android:maxHeight="50dp"
+        android:minWidth="30dp"
+        android:minHeight="30dp"
+        android:scaleType="fitStart"
+        app:layout_anchor="@+id/include2"
+        app:layout_anchorGravity="left|center"
+        app:srcCompat="@drawable/bottom_roller"
+        tools:layout_marginTop="150dp" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_marginTop="230dp"
-        android:visibility="visible"
-        app:layout_anchorGravity="top|left"
-        app:srcCompat="@drawable/tgs"
-        tools:layout_marginLeft="25dp"
-        tools:layout_width="55dp"
-        tools:srcCompat="@drawable/tgs" />
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="130dp"
+        app:layout_anchor="@+id/include2"
+        app:layout_anchorGravity="left|top"
+        app:srcCompat="@drawable/tgs" />
 
 </android.support.design.widget.CoordinatorLayout>

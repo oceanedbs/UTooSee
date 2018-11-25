@@ -5,19 +5,19 @@
 	"number of pieces":"4",
 	"name of the pieces":[
 		{
-			"name":"Bottom Roller 1",
+			"name":"Triple Grouser Shoe 1",
 			"use":"30"
 		},
 		 {
-			"name":"Bottom Roller2",
+			"name":"Triple Grouser Shoe 2",
 			"use": 28
 		},
 		{
-		"name":"Bottom Roller 3",
+		"name":"Triple Grouser Shoe 3",
 		"use":"31"
 		},
 		 {
-		"name":"Bottom Roller 4",
+		"name":"Triple Grouser Shoe 4",
 		"use":"32"
 		}
 	]

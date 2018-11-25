@@ -86,7 +86,7 @@ public class Measuring extends AppCompatActivity  {
                 btn.setId(i);
                 btn.setText(builder2.toString());
                 if(clic[i]==1){
-                    btn.setTextColor(R.color.colorAccent);
+                  //  btn.setTextColor(R.color.colorAccent);
                 }
                 btn.setOnClickListener(new View.OnClickListener()
                 {
