@@ -93,7 +93,7 @@ public class Measuring extends AppCompatActivity  {
                     @Override
                     public void onClick (View view){
                        // clic[i]=1;
-                        Intent intent = new Intent (Measuring.this, MakePhotoActivity.class);
+                        Intent intent = new Intent (Measuring.this, OpenCvActivity.class);
                         startActivity(intent);
 
                     }
@@ -144,7 +144,7 @@ public class Measuring extends AppCompatActivity  {
     {
         @Override
         public void onClick (View view){
-            Intent intent = new Intent (Measuring.this, MakePhotoActivity.class);
+            Intent intent = new Intent (Measuring.this, OpenCvActivity.class);
         startActivity(intent);
 
     }

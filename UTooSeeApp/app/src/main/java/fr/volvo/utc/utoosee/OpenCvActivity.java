@@ -116,6 +116,8 @@ public class OpenCvActivity extends Activity implements OnTouchListener, CvCamer
             @Override
             public void onClick (View view){
 //close activity
+                Intent intent = new Intent (OpenCvActivity.this, Measuring.class);
+                startActivity(intent);
             }
         });
     /*    SeekBar simpleSeekBar = (SeekBar) findViewById(R.id.seekBarPrecision); // initiate the Seek bar
