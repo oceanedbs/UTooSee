@@ -10,6 +10,8 @@
     <string name="title_activity_image_pick">ImagePickActivity</string>
     <string name="take_picture">Take picture</string>
     <string name="title_activity_make_photo">MakePhotoActivity</string>
+    <string name="title_activity_mesuring2">Mesuring2</string>
+    <string name="title_activity_mesuring_bottom_roller">MesuringBottomRoller</string>
     <string name="title_activity_make_photo">Taking a Photo</string>
     <string name="title_activity_open_cv">OpenCvActivity</string>
 </resources>
