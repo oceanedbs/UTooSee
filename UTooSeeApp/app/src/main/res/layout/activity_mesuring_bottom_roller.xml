@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MesuringBottomRoller">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include
+        android:id="@+id/include6"
+        layout="@layout/content_mesuring_bottom_roller" />
+
+    <TextView
+        android:id="@+id/piece"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:text=" Piece : "
+        android:textSize="30sp"
+        app:layout_anchor="@+id/include6"
+        app:layout_anchorGravity="left|top" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Submit all Pictures"
+        app:layout_anchor="@+id/include6"
+        app:layout_anchorGravity="bottom|center" />
+
+    <LinearLayout
+        android:id="@+id/LinerarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="353dp"
+        android:orientation="vertical"
+        app:layout_anchor="@+id/include6"
+        app:layout_anchorGravity="left|center"></LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
