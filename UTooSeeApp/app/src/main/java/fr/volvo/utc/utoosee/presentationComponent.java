@@ -46,18 +46,19 @@ public class presentationComponent extends AppCompatActivity {
         BottomRoller.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
-                Intent intent = new Intent (presentationComponent.this, Measuring.class);
-                startActivity(intent);
+                    Intent intent = new Intent (presentationComponent.this, Measuring.class);
+                    startActivity(intent);
+                }
 
-            }
+
+
         });
 
 
 
         Button tripleGrouserShoe = (Button) findViewById(R.id.tripleGrouserShoe);
-       /* tripleGrouserShoe.setOnClickListener(new View.OnClickListener(){
+        /*tripleGrouserShoe.setOnClickListener(new View.OnClickListener(){
             @Override
-
           public void onClick (View view){
                 Intent intent = new Intent (presentationComponent.this, Measuring.class);
                 startActivity(intent);

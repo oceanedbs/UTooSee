@@ -1,0 +1,26 @@
+{
+"pieces" : {
+	"id": "1",
+	"name":"Bottom Roller",
+	"number of pieces":"4",
+	"name of the pieces":[
+		{
+			"name":"Bottom Roller 1",
+			"use":"30"
+		},
+		 {
+			"name":"Bottom Roller2",
+			"use": 28
+		},
+		{
+		"name":"Bottom Roller 3",
+		"use":"31"
+		},
+		 {
+		"name":"Bottom Roller 4",
+		"use":"32"
+		}
+	]
+	}
+}
+

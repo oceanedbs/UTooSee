@@ -19,25 +19,7 @@ public class NSerie extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ExcavatorDB excavatorDB=new ExcavatorDB(this);
         final EditText nSerieEdit=(EditText)findViewById(R.id.nSerieEdit);
-
-        Excavator excavator = new Excavator(1234, "excavator 1");
-
-
-      excavatorDB.open();
-
-
-      excavatorDB.instertExcavator(excavator);
-
-     /* Excavator excavatorFromDB = excavatorDB.getExcavatorWithNum(1234);
-
-
-
-        if(excavatorFromDB != null){
-            nSerieEdit.setText("Yeahhhh");
-        }
-*/
 
 
 
