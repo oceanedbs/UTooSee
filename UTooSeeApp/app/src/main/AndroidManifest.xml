@@ -51,6 +51,11 @@
             android:label="@string/title_activity_measuring"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MesuringBottomRoller"
+            android:label="@string/title_activity_mesuring_bottom_roller"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".OpenCvActivity"
