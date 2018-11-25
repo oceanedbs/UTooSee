@@ -36,15 +36,15 @@ public class presentationComponent extends AppCompatActivity {
             }
         });
 
-      /*  Button BottomRoller = (Button) findViewById(R.id.BottomRoller);
+      Button BottomRoller = (Button) findViewById(R.id.BottomRoller);
         BottomRoller.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
-                Intent intent = new Intent (presentationComponent.this, Measuring.class);
+                Intent intent = new Intent (presentationComponent.this, Main2Activity.class);
                 startActivity(intent);
 
             }
-        });*/
+        });
 
 
         Button tripleGrouserShoe = (Button) findViewById(R.id.TripleGrouserShoe);
