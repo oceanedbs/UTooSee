@@ -91,7 +91,7 @@
         android:layout_height="60dp"
         android:visibility="visible"
         app:layout_anchorGravity="top|left"
-        app:srcCompat="@drawable/triple-bar-grouser-shoe"
+        app:srcCompat="@drawable/tgs"
         tools:layout_marginLeft="25dp"
         tools:layout_marginTop="150dp"
         tools:layout_width="55dp"
@@ -104,9 +104,9 @@
         android:layout_marginTop="230dp"
         android:visibility="visible"
         app:layout_anchorGravity="top|left"
-        app:srcCompat="@drawable/TGS"
+        app:srcCompat="@drawable/tgs"
         tools:layout_marginLeft="25dp"
         tools:layout_width="55dp"
-        tools:srcCompat="@drawable/TGS" />
+        tools:srcCompat="@drawable/tgs" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -2,7 +2,6 @@ package fr.volvo.utc.utoosee;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import android.content.Context;
@@ -12,8 +11,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 
 public class DBHandler extends SQLiteOpenHelper {
-
-    //information of database
 
     private static final int DATABASE_VERSION = 1;
 
@@ -26,6 +23,8 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String COLUMN_NAME = "Name";
 
     //initialize the database
+    private SQLiteDatabase bdd;
+
 
     public DBHandler(Context context){
 
@@ -42,7 +41,11 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
 
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {}
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS" + TABLE_NAME);
+        onCreate(db);
+    }
+
 
   /*  public String loadHandler() {}
 

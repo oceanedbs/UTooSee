@@ -1,5 +1,10 @@
 package fr.volvo.utc.utoosee;
 
+import android.database.sqlite.SQLiteOpenHelper;
+
+import android.database.sqlite.SQLiteDatabase;
+
+
 public class Excavator {
 
     private int SerieNumber;
@@ -26,6 +31,10 @@ public class Excavator {
     public String getName(){
         return this.Name;
     }
+
+ /*   public void addExcavator(Excavator excavator){
+        SQLiteDatabase bdd=db.getWritableDatabase();
+    }*/
 
 
 }
