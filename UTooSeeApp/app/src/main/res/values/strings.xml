@@ -7,6 +7,7 @@
     <string name="title_activity_summary">Summary</string>
     <string name="title_activity_measuring">Measuring</string>
     <string name="title_activity_photo_handler">PhotoHandler</string>
+    <string name="title_activity_open_cv">OpenCvActivity</string>
     <string name="title_activity_image_pick">ImagePickActivity</string>
     <string name="take_picture">Take picture</string>
     <string name="title_activity_make_photo">MakePhotoActivity</string>

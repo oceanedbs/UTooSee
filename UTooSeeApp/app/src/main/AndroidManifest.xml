@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front.autofocus" android:required="false"/>
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -66,10 +70,6 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".MakePhoto"
-            android:label="@string/title_activity_make_photo"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ImagePickActivity"
             android:label="@string/title_activity_image_pick"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -91,6 +91,16 @@
             android:name=".MesuringBottomRoller"
             android:label="@string/title_activity_mesuring_bottom_roller"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".OpenCvActivity"
+            android:label="@string/title_activity_open_cv"
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
